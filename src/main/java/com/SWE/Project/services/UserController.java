@@ -6,8 +6,8 @@ import com.SWE.Project.models.UserRegister;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.sql.SQLException;
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -36,5 +36,8 @@ public class UserController {
         UserRegister newUser = new UserRegister(email, uName, fName, lName, pass1, pass2, "user");
         return newUser.addUser();
     }
-
+    @RequestMapping("/showall")
+    public List<User> showAll() throws SQLException {
+        return (new DB()).showAll();
+    }
 }
