@@ -3,6 +3,7 @@ package com.SWE.Project.services;
 import com.SWE.Project.models.DB;
 import com.SWE.Project.models.User;
 import com.SWE.Project.models.UserRegister;
+import com.SWE.Project.models.UserLoging;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,6 +37,21 @@ public class UserController {
         UserRegister newUser = new UserRegister(email, uName, fName, lName, pass1, pass2, "user");
         return newUser.addUser();
     }
+
+    @RequestMapping("/login")
+    public String login(@RequestParam("UserName") String uName,
+                        @RequestParam("Password") String pass
+    ) throws SQLException {
+        UserLoging loginUser = new UserLoging(uName, pass);
+        return loginUser.login();
+    }
+
+    @RequestMapping("/logout")
+    public String login() throws SQLException {
+        UserLoging loginUser = new UserLoging("", "");
+        return loginUser.logOut();
+    }
+
     @RequestMapping("/showall")
     public List<User> showAll() throws SQLException {
         return (new DB()).showAll();
