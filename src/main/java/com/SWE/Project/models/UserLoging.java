@@ -37,8 +37,8 @@ public class UserLoging extends User{
     private User getUserData() throws SQLException {
         Statement stmt = (new DB()).getConn().createStatement();
         String usr = checkData(this.getuName()), pw = checkData(this.getPass());
-        ResultSet res = stmt.executeQuery("select * from users where user_name = '" +
-                usr + "' and password = '" + pw + "'");
+        ResultSet res = stmt.executeQuery("select * from users where (user_name = '" +
+                usr + "' or email = '" + usr + "') and password = '" + pw + "'");
         if(res.next()) {
             User user = new User();
             user.setEmail(res.getString("email"));

@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @RequestMapping("/login")
-    public String login(@RequestParam("UserName") String uName,
+    public String login(@RequestParam("UserName/Email") String uName,
                         @RequestParam("Password") String pass
     ) throws SQLException {
         UserLoging loginUser = new UserLoging(uName, pass);
