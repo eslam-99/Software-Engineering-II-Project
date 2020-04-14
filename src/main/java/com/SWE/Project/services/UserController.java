@@ -2,18 +2,19 @@ package com.SWE.Project.services;
 
 import com.SWE.Project.models.DB;
 import com.SWE.Project.models.User;
-import com.SWE.Project.models.UserRegister;
+import com.SWE.Project.models.Session;
 import com.SWE.Project.models.UserLoging;
+import com.SWE.Project.models.UserRegister;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import java.sql.SQLException;
 import java.util.List;
+
+import java.sql.SQLException;
 
 @RestController
 public class UserController {
-
-    @RequestMapping("/registerAdmin")
+    @RequestMapping("/register/admin")
     public String addUser(@RequestParam("UserName") String uName,
                           @RequestParam("Email") String email,
                           @RequestParam("FirstName") String fName,
@@ -26,7 +27,7 @@ public class UserController {
         return newUser.addUser();
     }
 
-    @RequestMapping("/register")
+    @RequestMapping("/register/user")
     public String addUser(@RequestParam("UserName") String uName,
                           @RequestParam("Email") String email,
                           @RequestParam("FirstName") String fName,
@@ -54,6 +55,10 @@ public class UserController {
 
     @RequestMapping("/showall")
     public List<User> showAll() throws SQLException {
-        return (new DB()).showAll();
+        if(Session.getSession() == null)
+            return null;
+        else if(Session.getSession().getAccType().toLowerCase().equals("admin"))
+            return (new DB()).showAll();
+        return null;
     }
 }
