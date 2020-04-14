@@ -28,16 +28,19 @@ public class UserRegister extends User {
     public String addUser() throws SQLException {
         Statement stmt = (new DB()).getConn().createStatement();
         ResultSet res;
-        boolean chk1 = true, chk2 = true;
+        boolean chk1 = true, chk2 = true, chk3 = true;
         if (this.getAccType().toLowerCase().equals("admin")) {
             if (!key.equals("AdminKey00")) chk1 = false;
             if (!chk1) {
-                res = stmt.executeQuery("select * from users");
-                if (res.next())
-                    chk2 = false;
+                if (Session.getSession() == null) {
+                    res = stmt.executeQuery("select * from users");
+                    if (res.next())
+                        chk2 = false;
+                } else if (!Session.getSession().getAccType().toLowerCase().equals("admin"))
+                    chk3 = false;
             }
         }
-        if (chk1 || chk2) {
+        if (chk1 || (chk2 && chk3)) {
             res = stmt.executeQuery("select * from users where email = '" + this.getEmail() +
                     "' or user_name = '" + this.getuName() + "'");
             if (!res.next()) {
