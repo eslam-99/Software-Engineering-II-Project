@@ -6,11 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17c92b32-defa-43d1-b1d4-abef75ab4a80" name="Default Changelist" comment="">
+    <list default="true" id="17c92b32-defa-43d1-b1d4-abef75ab4a80" name="Default Changelist" comment="Replaced inheritance with Aggregation + added some checks for signup &amp; replaced func name of addUser with signup">
+      <change afterPath="$PROJECT_DIR$/.idea/Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/SWE/Project/models/UserLoging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SWE/Project/models/UserLoging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SWE/Project/models/UserRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SWE/Project/models/UserRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/SWE/Project/services/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SWE/Project/services/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/UserLoging.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/UserLoging.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/UserRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/UserRegister.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/SWE/Project/services/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/SWE/Project/services/UserController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +31,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
@@ -45,7 +55,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -57,7 +67,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="1.8.0_202" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.SWE.Project.main" />
-      <module name="SWE_Project" />
+      <module name="Project" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,7 +86,15 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Replaced inheritance with Aggregation + added some checks for signup &amp; replaced func name of addUser with signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replaced inheritance with Aggregation + added some checks for signup &amp; replaced func name of addUser with signup" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="400" y="60" key="#Main" timestamp="1586945660439">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="400" y="60" key="#Main/0.0.1366.728@0.0.1366.728" timestamp="1586945660439" />
     <state x="275" y="22" key="#Notifications" timestamp="1586801908743">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -85,18 +103,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586800936801" />
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1585526203029">
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1586946417952">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1585526203029" />
-    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585648920471">
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586946417952" />
+    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586945647328">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1585648920471" />
+    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1586945647328" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585576600459">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585576600458" />
+    <state x="266" y="0" key="CommitChangelistDialog2" timestamp="1586947405491">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="266" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1586947405491" />
     <state x="417" y="126" key="EnvironmentVariablesDialog" timestamp="1585601565829">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -109,22 +131,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="553" y="257" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1585574184103" />
-    <state width="1323" height="242" key="GridCell.Tab.0.bottom" timestamp="1586804848572">
+    <state width="1323" height="242" key="GridCell.Tab.0.bottom" timestamp="1586947354657">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="242" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586804848572" />
-    <state width="1323" height="242" key="GridCell.Tab.0.center" timestamp="1586804848572">
+    <state width="1323" height="242" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586947354657" />
+    <state width="1323" height="242" key="GridCell.Tab.0.center" timestamp="1586947354656">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="242" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586804848572" />
-    <state width="1323" height="242" key="GridCell.Tab.0.left" timestamp="1586804848572">
+    <state width="1323" height="242" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586947354656" />
+    <state width="1323" height="242" key="GridCell.Tab.0.left" timestamp="1586947354656">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="242" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586804848572" />
-    <state width="1323" height="242" key="GridCell.Tab.0.right" timestamp="1586804848572">
+    <state width="1323" height="242" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586947354656" />
+    <state width="1323" height="242" key="GridCell.Tab.0.right" timestamp="1586947354656">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="242" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586804848572" />
+    <state width="1323" height="242" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586947354656" />
     <state x="184" y="0" key="SettingsEditor" timestamp="1585648927876">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -5,7 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class UserRegister extends User {
+public class UserRegister{
+    private User newUser;
     private String pass2;
     private String key;
     private Connection conn;
@@ -15,21 +16,27 @@ public class UserRegister extends User {
     }
 
     public UserRegister(String email, String uName, String fName, String lName, String pass, String pass2, String accType) {
-        super(email, uName, fName, lName, pass, accType);
+        newUser = new User(email, uName, fName, lName, pass, accType);
         this.pass2 = pass2;
     }
 
     public UserRegister(String email, String uName, String fName, String lName, String pass, String pass2, String accType, String key) {
-        super(email, uName, fName, lName, pass, accType);
+        newUser = new User(email, uName, fName, lName, pass, accType);
         this.pass2 = pass2;
         this.key = key;
     }
 
-    public String addUser() throws SQLException {
+    public String signup() throws SQLException {
+        String msg = "";
+        if(!newUser.getEmail().contains("@")) msg += "Invalid Email Address";
+        if(!newUser.getPass().equals(pass2)) msg += "Passwords don't match";
+        if(newUser.getPass().length() < 8) msg += "Passwords must be atlest 8 digits";
+        if(msg.length() != 0) return msg;
+
         Statement stmt = (new DB()).getConn().createStatement();
         ResultSet res;
         boolean chk1 = true, chk2 = true, chk3 = true;
-        if (this.getAccType().toLowerCase().equals("admin")) {
+        if (newUser.getAccType().toLowerCase().equals("admin")) {
             if (!key.equals("AdminKey00")) chk1 = false;
             if (!chk1) {
                 if (Session.getSession() == null) {
@@ -41,15 +48,15 @@ public class UserRegister extends User {
             }
         }
         if (chk1 || (chk2 && chk3)) {
-            res = stmt.executeQuery("select * from users where email = '" + this.getEmail() +
-                    "' or user_name = '" + this.getuName() + "'");
+            res = stmt.executeQuery("select * from users where email = '" + newUser.getEmail() +
+                    "' or user_name = '" + newUser.getuName() + "'");
             if (!res.next()) {
-                stmt.executeUpdate("insert into users values ('" + this.getEmail() +
-                        "', '" + this.getuName() +
-                        "', '" + this.getfName() +
-                        "', '" + this.getlName() +
-                        "', '" + this.getPass() +
-                        "', '" + this.getAccType() + "')");
+                stmt.executeUpdate("insert into users values ('" + newUser.getEmail() +
+                        "', '" + newUser.getuName() +
+                        "', '" + newUser.getfName() +
+                        "', '" + newUser.getlName() +
+                        "', '" + newUser.getPass() +
+                        "', '" + newUser.getAccType() + "')");
                 return "User Added Successfully";
             } else
                 return "Username or Email Address Already Exists";
