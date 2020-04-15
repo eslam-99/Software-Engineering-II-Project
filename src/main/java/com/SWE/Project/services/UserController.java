@@ -24,7 +24,7 @@ public class UserController {
                           @RequestParam("Key") String key
     ) throws SQLException {
         UserRegister newUser = new UserRegister(email, uName, fName, lName, pass1, pass2, "admin", key);
-        return newUser.addUser();
+        return newUser.signup();
     }
 
     @RequestMapping("/register/user")
@@ -36,7 +36,7 @@ public class UserController {
                           @RequestParam("Password2") String pass2
     ) throws SQLException {
         UserRegister newUser = new UserRegister(email, uName, fName, lName, pass1, pass2, "user");
-        return newUser.addUser();
+        return newUser.signup();
     }
 
     @RequestMapping("/login")
@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @RequestMapping("/logout")
-    public String login() throws SQLException {
+    public String login() {
         UserLoging loginUser = new UserLoging("", "");
         return loginUser.logOut();
     }

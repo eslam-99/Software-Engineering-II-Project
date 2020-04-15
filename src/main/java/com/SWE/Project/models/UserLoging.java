@@ -4,11 +4,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class UserLoging extends User{
+public class UserLoging{
+    private String id;
+    private String pass;
 
-    public UserLoging(String uName, String pass) {
-        this.setuName(uName);
-        this.setPass(pass);
+    public UserLoging(String id, String pass) {
+        this.id = id;
+        this.pass = pass;
     }
 
     public String login() throws SQLException{
@@ -25,7 +27,7 @@ public class UserLoging extends User{
             return "You are already loged-in";
     }
 
-    public String logOut() throws SQLException {
+    public String logOut() {
         if (Session.getSession() != null) {
             Session.delSession();
             return "Loged out successfully";
@@ -36,7 +38,7 @@ public class UserLoging extends User{
 
     private User getUserData() throws SQLException {
         Statement stmt = (new DB()).getConn().createStatement();
-        String usr = checkData(this.getuName()), pw = checkData(this.getPass());
+        String usr = checkData(id), pw = checkData(pass);
         ResultSet res = stmt.executeQuery("select * from users where (user_name = '" +
                 usr + "' or email = '" + usr + "') and password = '" + pw + "'");
         if(res.next()) {
