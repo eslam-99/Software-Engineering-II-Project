@@ -1,9 +1,6 @@
 package com.SWE.Project.models;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class UserRegister{
     private User newUser;
@@ -27,20 +24,21 @@ public class UserRegister{
     }
 
     public String signup() throws SQLException {
-        String msg = "";
-        if(!newUser.getEmail().contains("@")) msg += "Invalid Email Address";
-        if(!newUser.getPass().equals(pass2)) msg += "Passwords don't match";
-        if(newUser.getPass().length() < 8) msg += "Passwords must be atlest 8 digits";
-        if(msg.length() != 0) return msg;
-
-        Statement stmt = (new DB()).getConn().createStatement();
+        String message = "";
+        if(!newUser.getEmail().contains("@")) message += "Invalid Email Address";
+        if(!newUser.getPass().equals(pass2)) message += "Passwords don't match";
+        if(newUser.getPass().length() < 8) message += "Passwords must be atlest 8 digits";
+        if(message.length() != 0) return message;
+        conn = (new DB()).getConn();
+        PreparedStatement ps;
         ResultSet res;
         boolean chk1 = true, chk2 = true, chk3 = true;
         if (newUser.getAccType().toLowerCase().equals("admin")) {
             if (!key.equals("AdminKey00")) chk1 = false;
             if (!chk1) {
                 if (Session.getSession() == null) {
-                    res = stmt.executeQuery("select * from users");
+                    ps = conn.prepareStatement("select * from users");
+                    res = ps.executeQuery();
                     if (res.next())
                         chk2 = false;
                 } else if (!Session.getSession().getAccType().toLowerCase().equals("admin"))
@@ -48,19 +46,25 @@ public class UserRegister{
             }
         }
         if (chk1 || (chk2 && chk3)) {
-            res = stmt.executeQuery("select * from users where email = '" + newUser.getEmail() +
-                    "' or user_name = '" + newUser.getuName() + "'");
+            ps = conn.prepareStatement("select * from users where email = ? or user_name = ?");
+            ps.setString(1, newUser.getEmail());
+            ps.setString(2, newUser.getuName());
+            res = ps.executeQuery();
             if (!res.next()) {
-                stmt.executeUpdate("insert into users values ('" + newUser.getEmail() +
-                        "', '" + newUser.getuName() +
-                        "', '" + newUser.getfName() +
-                        "', '" + newUser.getlName() +
-                        "', '" + newUser.getPass() +
-                        "', '" + newUser.getAccType() + "')");
-                return "User Added Successfully";
+                ps = conn.prepareStatement("insert into users values (?, ?, ?, ?, ?, ?)");
+                ps.setString(1, newUser.getEmail());
+                ps.setString(2, newUser.getuName());
+                ps.setString(3, newUser.getfName());
+                ps.setString(4, newUser.getlName());
+                ps.setString(5, newUser.getPass());
+                ps.setString(6, newUser.getAccType());
+                ps.executeUpdate();
+                message = "User Added Successfully";
             } else
-                return "Username or Email Address Already Exists";
+                message = "Username or Email Address Already Exists";
         } else
-            return "You don't have privileges to register a new admin";
+            message = "You don't have privileges to register a new admin";
+        conn.close();
+        return message;
     }
 }
