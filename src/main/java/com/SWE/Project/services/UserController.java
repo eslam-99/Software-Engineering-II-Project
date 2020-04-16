@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @RequestMapping("/logout")
-    public String login() {
+    public String login() throws SQLException {
         UserLoging loginUser = new UserLoging("", "");
         return loginUser.logOut();
     }
