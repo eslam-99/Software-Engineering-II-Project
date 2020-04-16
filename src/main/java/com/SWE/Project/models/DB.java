@@ -9,21 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DB {
+    boolean created = false;
     Connection conn;
 
-    public DB() throws SQLException{
-        File file = new File("C://BookStore");
-        if (!file.isDirectory() || file.list().length == 0) {
-            conn = DriverManager.getConnection("jdbc:derby:c://BookStore;create=true");
-            conn.createStatement().executeUpdate("create table users (email varchar(30) primary key,"+
-                                                                    " user_name varchar(30)," +
-                                                                    " first_name varchar(30)," +
-                                                                    " last_name varchar(30)," +
-                                                                    " password varchar(30)," +
-                                                                    " acc_type varchar(30))");
+    public DB() throws SQLException {
+        conn = DriverManager.getConnection("jdbc:derby:c://BookStore;create=true");
+        ResultSet res = conn.getMetaData().getTables(null, "APP", "USERS", null);
+        if (!res.next()) {
+            conn.createStatement().executeUpdate("create table users (email varchar(30) primary key," +
+                    " user_name varchar(30)," +
+                    " first_name varchar(30)," +
+                    " last_name varchar(30)," +
+                    " password varchar(30)," +
+                    " acc_type varchar(30))");
         }
-        else
-            conn = DriverManager.getConnection("jdbc:derby:c://BookStore;create=true");
     }
 
     public Connection getConn() {
