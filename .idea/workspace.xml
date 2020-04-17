@@ -7,18 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17c92b32-defa-43d1-b1d4-abef75ab4a80" name="Default Changelist" comment="Replaced inheritance with Aggregation + added some checks for signup &amp; replaced func name of addUser with signup">
-      <change afterPath="$PROJECT_DIR$/DockerFile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derby.log" beforeDir="false" afterPath="$PROJECT_DIR$/derby.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/SWE/Project/models/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SWE/Project/models/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SWE/Project/models/UserRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SWE/Project/models/UserRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/SWE/Project/services/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SWE/Project/services/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/DB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/DB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/UserLoging.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/UserLoging.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/UserRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/SWE/Project/models/UserRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/SWE/Project/services/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/SWE/Project/services/UserController.class" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +61,18 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8.0_202" />
@@ -105,81 +115,43 @@
     <option name="LAST_COMMIT_MESSAGE" value="Replaced inheritance with Aggregation + added some checks for signup &amp; replaced func name of addUser with signup" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="400" y="60" key="#Main" timestamp="1586945660439">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="400" y="60" key="#Main/0.0.1366.728@0.0.1366.728" timestamp="1586945660439" />
-    <state x="275" y="22" key="#Notifications" timestamp="1586801908743">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="22" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1586801908743" />
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587054694447">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1587054694447" />
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1586946417952">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1586946417952" />
-    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1586945647328">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1586945647328" />
-    <state x="531" y="253" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587054699159">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="531" y="253" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" timestamp="1587054699159" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585576600459">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585576600458" />
-    <state x="266" y="0" key="CommitChangelistDialog2" timestamp="1586947405491">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="266" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1586947405491" />
-    <state x="417" y="126" key="EnvironmentVariablesDialog" timestamp="1585601565829">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="417" y="126" key="EnvironmentVariablesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585601565829" />
-    <state x="463" y="90" key="FileChooserDialogImpl" timestamp="1585650136311">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="90" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585650136311" />
-    <state x="553" y="257" key="Github.ShareDialog" timestamp="1585574184103">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="553" y="257" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" timestamp="1585574184103" />
-    <state width="1323" height="242" key="GridCell.Tab.0.bottom" timestamp="1587062539829">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="242" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587062539829" />
-    <state width="1323" height="242" key="GridCell.Tab.0.center" timestamp="1587062539829">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="242" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587062539829" />
-    <state width="1323" height="242" key="GridCell.Tab.0.left" timestamp="1587062539829">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="242" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587062539829" />
-    <state width="1323" height="242" key="GridCell.Tab.0.right" timestamp="1587062539829">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="242" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587062539829" />
-    <state x="184" y="0" key="SettingsEditor" timestamp="1585648927876">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585648927876" />
-    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586801897445">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1586801897445" />
-    <state x="87" y="59" key="new project wizard" timestamp="1585648880478">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="87" y="59" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1585648880478" />
-    <state x="513" y="155" key="svn.repositoryBrowser" timestamp="1585574236897">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="513" y="155" key="svn.repositoryBrowser/0.0.1366.728@0.0.1366.728" timestamp="1585574236897" />
+    <state x="400" y="60" key="#Main" />
+    <state x="400" y="60" key="#Main/0.0.1366.728@0.0.1366.728" />
+    <state x="275" y="22" key="#Notifications" />
+    <state x="275" y="22" key="#Notifications/0.0.1366.728@0.0.1366.728" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" />
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" />
+    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog" />
+    <state x="412" y="148" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="531" y="253" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" />
+    <state x="531" y="253" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="266" y="0" key="CommitChangelistDialog2" />
+    <state x="266" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" />
+    <state x="417" y="126" key="EnvironmentVariablesDialog" />
+    <state x="417" y="126" key="EnvironmentVariablesDialog/0.0.1366.728@0.0.1366.728" />
+    <state x="463" y="90" key="FileChooserDialogImpl" />
+    <state x="463" y="90" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" />
+    <state x="553" y="257" key="Github.ShareDialog" />
+    <state x="553" y="257" key="Github.ShareDialog/0.0.1366.728@0.0.1366.728" />
+    <state width="1323" height="242" key="GridCell.Tab.0.bottom" />
+    <state width="1323" height="242" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" />
+    <state width="1323" height="242" key="GridCell.Tab.0.center" />
+    <state width="1323" height="242" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" />
+    <state width="1323" height="242" key="GridCell.Tab.0.left" />
+    <state width="1323" height="242" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" />
+    <state width="1323" height="242" key="GridCell.Tab.0.right" />
+    <state width="1323" height="242" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" />
+    <state x="184" y="0" key="SettingsEditor" />
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" />
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" />
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" />
+    <state x="87" y="59" key="new project wizard" />
+    <state x="87" y="59" key="new project wizard/0.0.1366.728@0.0.1366.728" />
+    <state x="513" y="155" key="svn.repositoryBrowser" />
+    <state x="513" y="155" key="svn.repositoryBrowser/0.0.1366.728@0.0.1366.728" />
   </component>
 </project>

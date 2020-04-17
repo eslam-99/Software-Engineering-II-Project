@@ -1,6 +1,5 @@
 package com.SWE.Project.models;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DB {
-    boolean created = false;
     Connection conn;
 
     public DB() throws SQLException {
