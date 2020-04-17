@@ -7,8 +7,8 @@ forward port to 9991
 Available Services :
 
 (the key for registering admin directly is : AdminKey00)
-.../register/admin
-Parameters:
+(.../register/admin)
+Parameters:(
     UserName String,
     Email String,
     FirstName String,
@@ -16,29 +16,29 @@ Parameters:
     Password1 String,
     Password2 String,
     Key String
-		
+)
 	
-.../register/user
-Parameters:
+(.../register/user)
+Parameters:(
     UserName String,
     Email String,
     FirstName String,
     LastName String,
     Password1 String,
     Password2 String
+)	
 	
-	
-.../login
-Parameters:
+(.../login)
+Parameters:(
 	UserName/Email String,
 	Password String
+)
 
-
-.../logout
+(.../logout)
 No Parameters
 
 
 (show all users in DB for admins only)
-.../list/user
+(.../list/user)
 No Parameters
    
