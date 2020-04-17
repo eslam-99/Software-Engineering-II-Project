@@ -8,10 +8,6 @@ public class UserRegister{
     private String key;
     private Connection conn;
 
-    public UserRegister() {
-
-    }
-
     public UserRegister(String email, String uName, String fName, String lName, String pass, String pass2, String accType) {
         newUser = new User(email, uName, fName, lName, pass, accType);
         this.pass2 = pass2;

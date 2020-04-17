@@ -15,7 +15,7 @@ import java.sql.SQLException;
 @RestController
 public class UserController {
     @RequestMapping("/register/admin")
-    public String addUser(@RequestParam("UserName") String uName,
+    public String register(@RequestParam("UserName") String uName,
                           @RequestParam("Email") String email,
                           @RequestParam("FirstName") String fName,
                           @RequestParam("LastName") String lName,
@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @RequestMapping("/register/user")
-    public String addUser(@RequestParam("UserName") String uName,
+    public String register(@RequestParam("UserName") String uName,
                           @RequestParam("Email") String email,
                           @RequestParam("FirstName") String fName,
                           @RequestParam("LastName") String lName,
@@ -53,8 +53,8 @@ public class UserController {
         return loginUser.logOut();
     }
 
-    @RequestMapping("/showall")
-    public List<User> showAll() throws SQLException {
+    @RequestMapping("/list/users")
+    public List<User> listUsers() throws SQLException {
         if(Session.getSession() == null)
             return null;
         else if(Session.getSession().getAccType().toLowerCase().equals("admin"))
